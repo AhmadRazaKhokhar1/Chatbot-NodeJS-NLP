@@ -16,15 +16,14 @@ const manager = new NlpManager.NlpManager(({ languages: ["en"] }));
   manager.addDocument("en", "hi man", "greeting");
 
   //step 2. add answers for the intents
-  // three args, 1-language, 2-the intent we declared before, 3-the answer to it
-  manager.addAnswer("en", "greeting", "Hi! may know how could I help?");
-  manager.addAnswer("en", "greeting", "Hey! may know how could assist you?");
+  // three args, 1-language, 2-the intent we declared before, 3-the answer to it and is commonly known as utterances
+  manager.addAnswer("en", "greeting", "Hi! may I know how could I help?");
+  manager.addAnswer("en", "greeting", "Hey! may I know how could assist you?");
   manager.addAnswer("en", "greeting", "Welcome back! please tell me how can I help?");
   manager.addAnswer("en", "greeting", "Hi! please let me know how can I help?");
   //this will randomly select an answer if the intent score is matched
 
   //step 3. training the model
-  await manager.load('./model.nlp')
   await manager.train();
   manager.save();
 

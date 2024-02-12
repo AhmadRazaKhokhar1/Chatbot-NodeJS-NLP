@@ -78,19 +78,18 @@
               }
             },
             "language": "en",
-            "keepStopwords": "en",
+            "keepStopwords": true,
             "docs": [
               {
                 "intent": "greeting",
                 "tokens": [
-                  "hi"
+                  "hey"
                 ]
               },
               {
                 "intent": "greeting",
                 "tokens": [
-                  "hey",
-                  "you"
+                  "hi"
                 ]
               },
               {
@@ -120,11 +119,11 @@
             "features": {
               "hey": 2,
               "hi": 2,
-              "man": 3,
-              "you": 2,
               "yo": 1,
+              "man": 2,
               "what": 1,
-              "up": 1
+              "up": 1,
+              "you": 1
             },
             "isEditing": false,
             "className": "BrainNLU",
@@ -154,40 +153,40 @@
                 ],
                 "layers": [
                   {
-                    "hi": {},
                     "hey": {},
-                    "you": {},
+                    "hi": {},
                     "yo": {},
                     "man": {},
                     "what": {},
                     "up": {},
+                    "you": {},
                     "nonefeature": {}
                   },
                   {
                     "greeting": {
-                      "bias": 4.671616584,
+                      "bias": 5.396179501,
                       "weights": {
-                        "hi": 7.60373354,
-                        "hey": 3.910889626,
-                        "you": 3.910889626,
-                        "yo": 2.472403288,
-                        "man": 0.361841351,
-                        "what": 2.472403288,
-                        "up": 2.472403288,
-                        "nonefeature": -4.637681961
+                        "hey": 7.017401218,
+                        "hi": 6.896365166,
+                        "yo": 2.239273071,
+                        "man": 0.336127371,
+                        "what": 2.239273071,
+                        "up": 2.239273071,
+                        "you": 0.131562233,
+                        "nonefeature": -5.353922844
                       }
                     },
                     "None": {
-                      "bias": 2.648938895,
+                      "bias": 2.396340455,
                       "weights": {
-                        "hi": -2.646162748,
-                        "hey": -1.324378014,
-                        "you": -1.324378014,
-                        "yo": -0.580055535,
-                        "man": -0.908593297,
-                        "what": -0.580055535,
-                        "up": -0.580055535,
-                        "nonefeature": 9.848319054
+                        "hey": -2.394093513,
+                        "hi": -2.392698288,
+                        "yo": -0.518971145,
+                        "man": -0.839064479,
+                        "what": -0.518971145,
+                        "up": -0.518971145,
+                        "you": -0.502324402,
+                        "nonefeature": 10.098168373
                       }
                     }
                   }
@@ -210,26 +209,6 @@
       }
     },
     "extraSentences": [
-      [
-        "en",
-        "hey"
-      ],
-      [
-        "en",
-        "hi"
-      ],
-      [
-        "en",
-        "yo man whats up"
-      ],
-      [
-        "en",
-        "hey you"
-      ],
-      [
-        "en",
-        "hi man"
-      ],
       [
         "en",
         "hey"
