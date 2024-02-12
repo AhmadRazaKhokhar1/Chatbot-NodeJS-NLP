@@ -1,0 +1,7 @@
+lib/**/*.json
+lib/nlp/stemmers/**/*.js
+coverage/**
+toto.js
+node_modules
+dist
+docs/static/scripts
