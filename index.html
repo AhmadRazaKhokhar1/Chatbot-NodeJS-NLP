@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <title>Document</title>
+  </head>
+  <body>
+    <form
+      method="get"
+      onsubmit="askAiChatBot(event)"
+      style="
+        display: flex;
+        width: 22vw;
+        justify-content: space-between;
+        align-items: center;
+        margin: auto;
+        margin-top: 50px;
+      "
+    >
+      <input
+        type="text"
+        style="
+          padding: 5px;
+          border: 1px solid black;
+          border-radius: 7px;
+          outline: none;
+          display: block;
+          margin: auto;
+        "
+        placeholder="Hi how can I help?"
+        id="userInput"
+      />
+      <button type="submit">Send</button>
+    </form>
+    <div id="response"></div>
+    <script>
+      const userInput = document.querySelector("#userInput");
+      const responseContainer = document.querySelector("#response");
+      const askAiChatBot = async (event) => {
+        event.preventDefault();
+        try {
+          const response = await axios.get(
+            `http://localhost:3001/api/v1/chatbot?message=${userInput.value}`
+          );
+          console.log(response);
+          responseContainer.innerHTML += `<b>
+                    ${response.data.answer}
+                    </b>`;
+        } catch (error) {
+          console.log(error);
+        }
+      };
+    </script>
+  </body>
+</html>
