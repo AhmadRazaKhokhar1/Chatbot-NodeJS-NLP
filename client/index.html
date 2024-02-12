@@ -13,7 +13,7 @@
       onsubmit="askAiChatBot(); return false;"
       style="
         display: flex;
-        width: 28vw;
+        width: 19vw;
         justify-content: space-between;
         align-items: center;
         margin: auto;
@@ -23,17 +23,17 @@
       <input
         type="text"
         style="
-          padding: 5px;
+          padding: 8px;
           border: 1px solid black;
-          border-radius: 7px;
+          border-radius: 12px;
           outline: none;
           display: block;
-          margin-right: 7px;
         "
         placeholder="Hi how can I help?"
         id="userInput"
+        required
         />
-        <button type="submit">Send</button>
+        <input type="submit" value="Send" style="padding: 8px; border-radius: 12px; border: none; width: 5vw; "/>
       </form>
       <div id="response"></div>
     </div>

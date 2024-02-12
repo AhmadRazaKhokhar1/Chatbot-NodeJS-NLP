@@ -1,17 +1,21 @@
 const userInput = document.querySelector("#userInput");
 const responseContainer = document.querySelector("#response");
-const askAiChatBot = async () => {
+var response;
+async function askAiChatBot() {
   try {
     responseContainer.innerHTML = "Loading please wait...";
-    const response = await axios.get(
+    response = await axios.get(
       `http://localhost:3001/api/v1/chatbot?message=${userInput.value}`
     );
     responseContainer.innerHTML = "";
-
-    responseContainer.innerHTML += `<b>
+    if (response.data.answer === "") {
+      return (responseContainer.innerHTML +=
+        "<b>Please rephrase your query, it is not available upto to what I am trained for.</b>");
+    }
+    return (responseContainer.innerHTML += `<b>
                     ${response.data.answer.toString()}
-                    </b>`;
+                    </b>`);
   } catch (error) {
     console.log(error);
   }
-};
+}
