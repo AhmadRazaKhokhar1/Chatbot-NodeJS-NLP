@@ -8,7 +8,7 @@ async function askAiChatBot() {
       `http://localhost:3001/api/v1/chatbot?message=${userInput.value}`
     );
     responseContainer.innerHTML = "";
-    if (response.data.answer === "") {
+    if (response.data.answer === "" || !response.data.answer) {
       return (responseContainer.innerHTML +=
         "<b>Please rephrase your query, it is not available upto to what I am trained for.</b>");
     }
