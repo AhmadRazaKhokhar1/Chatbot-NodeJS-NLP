@@ -1,6 +1,6 @@
-const NlpManager = require("node-nlp");
+const NLP = require("node-nlp");
 const data = require("../dataset/intents.json");
-const manager = new NlpManager.NlpManager({ languages: ["en"] });
+const manager = new NLP.NlpManager({ languages: ["en"] });
 
 const chatBotController = {
   testChat: async (req, res) => {
@@ -26,7 +26,7 @@ const chatBotController = {
 
       //step 3. training the model
       await manager.train();
-      manager.save();
+      await manager.save();
 
       const response = await manager.process("en", req.query.message);
       res.status(200).json({
